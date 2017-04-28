@@ -1,0 +1,28 @@
+.login-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+
+input {
+  height: 60px;
+  width: 33%;
+  min-width: 300px;
+  border-width: 1px;
+  border-radius: 5px;
+  margin: 12px;
+  text-indent: 30px;
+  font-size: 18px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.login-btn {
+  background-color: #ff1940;
+  color: white;
+  cursor: pointer;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Login.css';
 
 export default class Login extends Component {
   constructor(){
@@ -13,17 +14,23 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className='login-component'>
+
         <input
           type='text'
           ref='textBox'
+          autoFocus={true}
+          className='login-txt'
           placeholder='Type your username...' />
+
         <input
           type='button'
-          autoFocus={true}
-          value={'Join the DoorDash Chat!'}
+          value='Join the DoorDash Chat!'
+          className='login-btn'
           onClick={this.login.bind(this)} />
+
         {this.state.username}
+
       </div>
     )
   }
