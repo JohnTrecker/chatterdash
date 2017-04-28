@@ -7,6 +7,8 @@
 }
 
 input {
+  box-shadow: inset 0 0 3px #000000;
+  border: none;
   height: 60px;
   width: 33%;
   min-width: 300px;
@@ -21,8 +23,14 @@ input:focus {
   outline: none;
 }
 
+.login-txt {
+  text-shadow: 0 0 0 lightgrey;
+  color: slategrey;
+}
+
 .login-btn {
   background-color: #ff1940;
   color: white;
   cursor: pointer;
 }
+
