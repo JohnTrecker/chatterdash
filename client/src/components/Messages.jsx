@@ -8,8 +8,6 @@ export default class Messages extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    this.refs.messages.scrollTop = this.refs.messages.scrollHeight; // auto scroll
-
     if (nextProps.room === this.props.room) return // unnecessary API calls
 
     fetch( `http://localhost:8081/api/rooms/${nextProps.room}/messages` )
@@ -18,6 +16,7 @@ export default class Messages extends Component {
       .catch( err => console.log('Error fetching meesages: ', err))
 
   }
+
 
   render(){
     return (
@@ -38,6 +37,10 @@ export default class Messages extends Component {
 
       </div>
     )
+  }
+
+  componentDidMount(){
+    this.refs.messages.scrollTop = this.refs.messages.scrollHeight; // auto scroll
   }
 
 }
