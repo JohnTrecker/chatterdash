@@ -5,3 +5,9 @@ div#chatroom {
   height: inherit;
   width: inherit;
 }
+
+div#chatroom h3 {
+  font-size: 18px;
+  color: grey;
+}
+

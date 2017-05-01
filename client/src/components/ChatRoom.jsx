@@ -31,6 +31,7 @@ export default class Chatroom extends Component {
           room={room.name || 'Choose a Room'}
           users={roomInfo.users || []} />
         <Messages
+          user={user}
           room={room.id} />
         <Textbox
           user={user}

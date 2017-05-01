@@ -4,7 +4,7 @@ import './Header.css';
 const Header = (props) =>
   <header id='header'>
     <h1>{props.room}</h1>
-    <h2>{props.users}</h2>
+    <h3>{props.users}</h3>
   </header>
 
 export default Header;
