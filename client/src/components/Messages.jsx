@@ -8,8 +8,9 @@ export default class Messages extends Component {
   }
 
   componentWillReceiveProps(nextProps){
+    this.refs.messages.scrollTop = this.refs.messages.scrollHeight; // auto scroll
 
-    if (nextProps.room === this.props.room) return
+    if (nextProps.room === this.props.room) return // unnecessary API calls
 
     fetch( `http://localhost:8081/api/rooms/${nextProps.room}/messages` )
       .then( res => res.json())
@@ -20,16 +21,23 @@ export default class Messages extends Component {
 
   render(){
     return (
-      <div id='messages'>
+      <div id='messages' ref='messages'>
 
-        {this.state.messages.map((info, i) =>
-          <div key={i}  >
-            <p className='text'>{info.message}</p>
-            <h3 className='name'>{info.name}</h3>
-          </div>
-        )}
+        {this.state.messages.map((info, i) => {
+
+          const side = info.name === this.props.user ? 'right' : 'left';
+          return (
+            <div className='message' key={i}>
+              <p className={`text ${side}`}>{info.message}</p>
+              <h3 className={`name ${side}`}>{info.name}</h3>
+            </div>
+          )
+
+        })}
+
 
       </div>
     )
   }
+
 }

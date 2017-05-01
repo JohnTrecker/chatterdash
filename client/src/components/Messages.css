@@ -1,6 +1,46 @@
 div#messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   height: 70%;
   max-height: 70%;
   box-shadow: 0px 3px 5px grey;
-  background-color: lightgrey;
+  background-color: #f0f4f7;
+  overflow-y: scroll;
 }
+
+div.message {
+  /*display: flex;*/
+}
+
+p.text {
+  height: auto;
+  max-width: 52%;
+  font-weight: lighter;
+  font-size: 20px;
+  text-align: start;
+  border-radius: 30px;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.07);
+  padding: 20px 30px;
+  margin: 10px 25px;
+}
+
+p.left {
+  float: left;
+  background-color: white;
+}
+
+p.right {
+  float: right;
+  background-color: #ff1940;
+  color: white;
+}
+
+h3.left {
+  float: left;
+}
+
+h3.right {
+  display: none;
+}
+
