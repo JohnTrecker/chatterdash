@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import Header from './Header';
+import Messages from './Messages';
+import Textbox from './Textbox';
 import './ChatRoom.css';
 
 export default class Chatroom extends Component {
@@ -31,26 +34,13 @@ export default class Chatroom extends Component {
     let { room } = this.props
     let { roomInfo } = this.state
     return (
-      <div>
+      <div id='chatroom'>
         <Header
           room={room.name || 'Choose a Room'}
           users={roomInfo.users || []} />
         <Messages />
-        <TextBox />
+        <Textbox />
       </div>
     )
   }
 }
-
-
-const Header = (props) =>
-  <header>
-    <h1>{props.room}</h1>
-    <h2>{props.users}</h2>
-  </header>
-
-const Messages = (props) =>
-  <div>Messages</div>
-
-const TextBox = (props) =>
-  <div>TextBox</div>

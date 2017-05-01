@@ -1,0 +1,6 @@
+div#messages {
+  height: 70%;
+  max-height: 70%;
+  box-shadow: 0px 3px 5px grey;
+  background-color: lightgrey;
+}

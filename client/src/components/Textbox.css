@@ -1,0 +1,4 @@
+div#textbox > header {
+  height: 10%;
+  max-height: 10%;
+}

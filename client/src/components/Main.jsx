@@ -38,7 +38,7 @@ export default class Main extends Component {
     return (
       <div id='Main'>
 
-        <Nav // props.user, API: rooms (obj),
+        <Nav
           user={user}
           rooms={rooms}
           time={time}

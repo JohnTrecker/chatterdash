@@ -1,0 +1,7 @@
+div#chatroom {
+  direction: flex;
+  flex-direction: column;
+  text-align: center;
+  height: inherit;
+  width: inherit;
+}
