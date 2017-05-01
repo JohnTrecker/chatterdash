@@ -8,10 +8,13 @@ div#messages {
   background-color: #f0f4f7;
   overflow-y: scroll;
 }
-
+/*
 div.message {
-  /*display: flex;*/
-}
+  display: flex;
+  height: auto;
+  width: inherit;
+  flex-direction: column;
+}*/
 
 p.text {
   height: auto;
@@ -27,17 +30,22 @@ p.text {
 
 p.left {
   float: left;
+  align-self: flex-start;
   background-color: white;
 }
 
 p.right {
   float: right;
+  align-self: flex-end;
   background-color: #ff1940;
   color: white;
 }
 
-h3.left {
+h3.name {
+  width: 100%;
+  text-align: start;
   float: left;
+  margin: 0px 0px 10px 25px;
 }
 
 h3.right {
