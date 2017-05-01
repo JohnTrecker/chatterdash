@@ -1,33 +1,22 @@
 import React, { Component } from 'react';
 import Login from './components/Login.jsx';
-import Nav from './components/Nav.jsx';
+import Main from './components/Main.jsx';
 
-class App extends Component {
+export default class App extends Component {
   constructor(){
     super();
-    this.state = {
-      user: 'John Trecker',
-      room: 'Your Room'
-    }
-    this.setRoom.bind(this);
+    this.state = { user: undefined }
   }
 
-  setRoom(room){
-    this.setState({room: room});
+  setUser(user){
+    this.setState({user: user});
   }
-
-
 
   render() {
     return (
-      // <Login/>
-      <Nav
-        user={this.state.user}
-        room={this.state.room}
-        setRoom={this.setRoom}
-        timeOnline={'12'} />
+      this.state.user
+        ? <Main user={this.state.user} />
+        : <Login setUser={this.setUser.bind(this)} />
     );
   }
 }
-
-export default App;
