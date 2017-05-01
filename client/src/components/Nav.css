@@ -1,5 +1,7 @@
 aside {
+  display: inline-block;
   width: 30%;
+  min-width: 400px;
   height: 100%;
   top: 0px;
   left: 0px;
@@ -7,15 +9,48 @@ aside {
   color: white;
 }
 
-.header { padding: 70px 50px; }
+aside > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-indent: 15%;
+  width: 100%
+}
+
+div.header {
+  height: 30%;
+}
 
 div.header > h1 {
   font-weight: bold;
   font-size: 30px;
 }
 
-div.header > h3, button {
+div.header > h3 {
   font-size: 20px;
   font-weight: lighter;
   margin: 15px 0px;
+}
+
+div.rooms {
+  justify-content: flex-start;
+  height: 70%;
+}
+
+input.room-btn {
+  width: inherit;
+  height: 80px;
+  text-align: start;
+  text-indent: 15%;
+  border: none;
+  background-color: #ff1940;
+  font-size: 25px;
+  font-weight: lighter;
+  color: white;
+  cursor: pointer;
+}
+
+input.room-btn:hover {
+  background-color: maroon;
 }
