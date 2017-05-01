@@ -47,7 +47,7 @@ table {
   border-spacing: 0;
 }
 
-html, body, #root {
+html, body, #root, #root > div {
   position: absolute;
   top: 0px;
   left: 0px;

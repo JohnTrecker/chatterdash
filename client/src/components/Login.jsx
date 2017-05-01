@@ -2,19 +2,14 @@ import React, { Component } from 'react';
 import './Login.css';
 
 export default class Login extends Component {
-  constructor(){
-    super();
-    this.state = {username: ''}
-  }
-
   login(){
     let username = this.refs.textBox.value
-    this.setState({username: username})
+    this.props.setUser(username)
   }
 
   render() {
     return (
-      <div className='login-component'>
+      <div className='login'>
 
         <input
           type='text'
@@ -28,8 +23,6 @@ export default class Login extends Component {
           value='Join the DoorDash Chat!'
           className='login-btn'
           onClick={this.login.bind(this)} />
-
-        {this.state.username}
 
       </div>
     )
