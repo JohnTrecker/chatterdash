@@ -23,7 +23,7 @@ export default class Chatroom extends Component {
   }
 
   render(){
-    let { room } = this.props
+    let { room, user } = this.props
     let { roomInfo } = this.state
     return (
       <div id='chatroom'>
@@ -32,7 +32,9 @@ export default class Chatroom extends Component {
           users={roomInfo.users || []} />
         <Messages
           room={room.id} />
-        <Textbox />
+        <Textbox
+          user={user}
+          room={room.id} />
       </div>
     )
   }

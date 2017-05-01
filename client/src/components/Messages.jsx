@@ -11,7 +11,6 @@ export default class Messages extends Component {
 
     if (nextProps.room === this.props.room) return
 
-    console.log('fetching: ', nextProps.room)
     fetch( `http://localhost:8081/api/rooms/${nextProps.room}/messages` )
       .then( res => res.json())
       .then( messages => this.setState({messages: messages}))
