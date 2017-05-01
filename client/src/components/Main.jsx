@@ -20,7 +20,7 @@ export default class Main extends Component {
   }
 
   newTime(){
-    let newTime = Math.floor(this.state.time + 1)
+    let newTime = this.state.time + 1
     this.setState({time: newTime})
   }
 

@@ -8,7 +8,7 @@ export default class Nav extends Component {
     if (time < 3) return `${message} a hot second`
     else if (time < 60) return `${message} less that a minute`
     else if (time < 120) return `${message} 1 minute`
-    else if (time >= 120) return `${message} ${time / 60} minutes`
+    else if (time >= 120) return `${message} ${Math.floor(time / 60)} minutes`
     else return 'more than a hot second'
   }
 
