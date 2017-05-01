@@ -12,18 +12,10 @@ export default class Chatroom extends Component {
     }
   }
 
-  componentWillMount(){
-    let { room } = this.props
-    let id = room.id || 0
-    fetch( `http://localhost:8081/api/rooms/${id}` )
-      .then( res => res.json())
-      .then( info => this.setState({roomInfo: info}))
-      .catch( err => console.log('Error feetching room info: ', err))
-  }
+  componentWillReceiveProps(nextProps){
+    if (parseInt(this.props.room.id, 10) === this.state.roomInfo.id) return
 
-  componentWillReceiveProps(){
-    let { room } = this.props
-    let id = room.id || 0
+    let id = nextProps.room.id;
     fetch( `http://localhost:8081/api/rooms/${id}` )
       .then( res => res.json())
       .then( info => this.setState({roomInfo: info}))
