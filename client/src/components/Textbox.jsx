@@ -4,18 +4,18 @@ import './Textbox.css';
 export default class Textbox extends Component {
 
   submit() {
-    let { user, room } = this.props
+    let { user, room, setMessages } = this.props
     let message = {
       name: user,
       message: this.refs.textBox.value
     }
-    console.log('message in TExtbox: ', message);
 
     return fetch( `http://localhost:8081/api/rooms/${room}/messages`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(message)
     })
+      .then(() => setMessages())
       .catch( err => console.log('Error putting new message: ', err))
   }
 
