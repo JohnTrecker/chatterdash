@@ -1,22 +1,56 @@
+# ChatterDash
+
 ## Synopsis
 
 Thank you for taking the time to review my code! ChatterDash is a simple front end chat app that consumes the API in server.js. The client uses a proxy server with create-react-app pointing to localhost:8080. Enjoy!
 
 ## Installation
 
-`npm install`
-`cd client && npm install`
-`cd .. && npm start`
+```sh
+npm install
+cd client && npm install
+cd .. && npm start
+```
 
-navigate to localhost:3000 to take it for a spin.
+Then open [http://localhost:3000/](http://localhost:3000/) to see the app.
 
 ## Documentation
 
 ChatterDash a single-page app that prioritizes minimal API calls, modularity, and a logical flow. The following structure documents how state and properties populate and interact with the app's components.
 
-App:
+[App]
+  [Login]
+    [consumes: user-generated name]
+    [generates: `user` and `time`]
+    [children: null]
+  [Main]
+    [consumes: RoomsList API]
+    [generates: `rooms`]
+    [children: ]
+      [Nav: ]
+        [consume: `user`, `time`, `rooms`]
+        [generates: `room` by UI]
+      [ChatRoom: ]
+        [consumes: `room`, `user`, RoomsDetail API]
+        [generates: `roomInfo`]
+        [children: ]
+          [Header: ]
+            [consumes: `roomInfo` and `user`]
+            [generates: null]
+            [children: null]
+          [Messages: ]
+            [consumes: Messages API (GET), `messages`]
+            [generates: `messages`]
+            [children: none]
+          [Textbox: ]
+            [consumes: Messages API (POST)]
+            [generates: `messages` by UI]
+            [children: none]
 
-{
+or
+
+```sh
+App: {
   Login: {
     consumes: user-generated name,
     generates: `user` and `time`,
@@ -54,7 +88,7 @@ App:
     }
   }
 }
-
+```
 ## Tests
 
 TBD
