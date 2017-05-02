@@ -8,20 +8,13 @@ export default class Chatroom extends Component {
   constructor(){
     super();
     this.state = {
-      roomInfo: ''
+      roomInfo: '',
+      newMessages: true
     }
   }
 
-  componentWillMount(){
-    let id = this.props.room.id;
-    fetch( `http://localhost:8081/api/rooms/${id}` )
-      .then( res => res.json())
-      .then( info => this.setState({roomInfo: info}))
-      .catch( err => console.log('Error feetching room info: ', err))
-  }
-
   componentWillReceiveProps(nextProps){
-    if (parseInt(this.props.room.id, 10) === this.state.roomInfo.id) return
+    if (parseInt(this.props.room.id, 10) === this.state.roomInfo.id) return // filter unnecessary API calls
 
     let id = nextProps.room.id;
     fetch( `http://localhost:8081/api/rooms/${id}` )
@@ -30,9 +23,13 @@ export default class Chatroom extends Component {
       .catch( err => console.log('Error feetching room info: ', err))
   }
 
+  setMessages(bool){
+    this.setState({newMessages: bool})
+  }
+
   render(){
     let { room, user } = this.props
-    let { roomInfo } = this.state
+    let { roomInfo, newMessages } = this.state
     return (
       <div id='chatroom'>
         <Header
@@ -41,10 +38,13 @@ export default class Chatroom extends Component {
           users={roomInfo.users || []} />
         <Messages
           user={user}
-          room={room.id} />
+          room={room.id}
+          newMessages={newMessages}
+          setMessages={this.setMessages.bind(this)} />
         <Textbox
           user={user}
-          room={room.id} />
+          room={room.id}
+          setMessages={this.setMessages.bind(this)} />
       </div>
     )
   }

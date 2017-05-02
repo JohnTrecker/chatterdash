@@ -54,3 +54,12 @@ input.room-btn {
 input.room-btn:hover {
   background-color: maroon;
 }
+
+#kitty {
+  content: 'U+1F63A';
+  height: 40px;
+  width: 40px;
+  z-index: 2;
+  display: block;
+  position: relative;
+}

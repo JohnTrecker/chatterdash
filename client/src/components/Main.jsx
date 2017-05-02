@@ -25,7 +25,7 @@ export default class Main extends Component {
   }
 
   componentWillMount() {
-    fetch( 'http://localhost:8081/api/rooms' )
+    fetch( '/api/rooms' )
       .then( res => res.json())
       .then( rooms => this.setState( {rooms: rooms, room: rooms[0]} ))
   }

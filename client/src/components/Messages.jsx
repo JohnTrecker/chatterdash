@@ -4,17 +4,23 @@ import './Messages.css';
 export default class Messages extends Component {
   constructor(){
     super();
-    this.state = {messages: []}
+    this.state = { messages: [] }
   }
 
   componentWillReceiveProps(nextProps){
-    if (nextProps.room === this.props.room) return // unnecessary API calls
+    let roomChange = nextProps.room !== this.props.room;
+    let newMessages = this.props.newMessages;
+    if (newMessages || roomChange) {
 
-    fetch( `http://localhost:8081/api/rooms/${nextProps.room}/messages` )
-      .then( res => res.json())
-      .then( messages => this.setState({messages: messages}))
-      .catch( err => console.log('Error fetching meesages: ', err))
+      console.log('fetch called in Messages');
+      fetch( `http://localhost:8081/api/rooms/${nextProps.room}/messages` )
+        .then( res => res.json())
+        .then( messages => this.setState({messages: messages}))
+        .then(this.props.setMessages(false))
+        .catch( err => console.log('Error fetching meesages: ', err))
 
+    }
+    else return
   }
 
 
