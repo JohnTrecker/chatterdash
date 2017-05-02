@@ -18,37 +18,6 @@ Then open [http://localhost:3000/](http://localhost:3000/) to see the app.
 
 ChatterDash a single-page app that prioritizes minimal API calls, modularity, and a logical flow. The following structure documents how state and properties populate and interact with the app's components.
 
--[App]
--  [Login]
--    [consumes: user-generated name]
--    [generates: `user` and `time`]
--    [children: null]
--  [Main]
--    [consumes: RoomsList API]
--    [generates: `rooms`]
--    [children: ]
--      [Nav: ]
--        [consume: `user`, `time`, `rooms`]
--        [generates: `room` by UI]
--      [ChatRoom: ]
--        [consumes: `room`, `user`, RoomsDetail API]
--        [generates: `roomInfo`]
--        [children: ]
--          [Header: ]
--            [consumes: `roomInfo` and `user`]
--            [generates: null]
--            [children: null]
--          [Messages: ]
--            [consumes: Messages API (GET), `messages`]
--            [generates: `messages`]
--            [children: none]
--          [Textbox: ]
--            [consumes: Messages API (POST)]
--            [generates: `messages` by UI]
--            [children: none]
-
-or
-
 ```sh
 App: {
   Login: {
@@ -89,6 +58,7 @@ App: {
   }
 }
 ```
+
 ## Tests
 
 TBD
