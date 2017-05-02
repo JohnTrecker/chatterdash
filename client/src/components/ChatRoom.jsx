@@ -17,7 +17,7 @@ export default class Chatroom extends Component {
     if (parseInt(this.props.room.id, 10) === this.state.roomInfo.id) return // filter unnecessary API calls
 
     let id = nextProps.room.id;
-    fetch( `http://localhost:8081/api/rooms/${id}` )
+    fetch( `/api/rooms/${id}` )
       .then( res => res.json())
       .then( info => this.setState({roomInfo: info}))
       .catch( err => console.log('Error feetching room info: ', err))

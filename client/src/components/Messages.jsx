@@ -13,7 +13,7 @@ export default class Messages extends Component {
     if (newMessages || roomChange) {
 
       console.log('fetch called in Messages');
-      fetch( `http://localhost:8081/api/rooms/${nextProps.room}/messages` )
+      fetch( `/api/rooms/${nextProps.room}/messages` )
         .then( res => res.json())
         .then( messages => this.setState({messages: messages}))
         .then(this.props.setMessages(false))

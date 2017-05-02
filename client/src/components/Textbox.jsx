@@ -15,7 +15,7 @@ export default class Textbox extends Component {
 
     let reset = () => {
       const placeholders = ['Keep it going', 'Don\'t be that guy', 'Insightful',
-      'Do you even lift bro', 'Hooli is watching', 'I dig the way you press those key; so strong',
+      'Do you even lift bro', 'Hooli is watching', 'I dig the way you press those keys; so strong',
       'PiperChat downround in May, calling it now', 'Because the world needs another chat app',
       'That John Trecker is okay by me -- Ghandi', 'Oh no he didn\'t', 'DoorDash dished Dutch dishes from dance floor to drug store']
       this.refs.textBox.value = ''
