@@ -12,7 +12,6 @@ export default class Messages extends Component {
     let newMessages = this.props.newMessages;
     if (newMessages || roomChange) {
 
-      console.log('fetch called in Messages');
       fetch( `/api/rooms/${nextProps.room}/messages` )
         .then( res => res.json())
         .then( messages => this.setState({messages: messages}))
