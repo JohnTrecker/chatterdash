@@ -23,24 +23,19 @@ export default class Messages extends Component {
     else return
   }
 
-
   render(){
     return (
       <div id='messages' ref='messages'>
-
-        {this.state.messages.map((info, i) => {
-
+        { this.state.messages.map((info, i) => {
           const side = info.name === this.props.user ? 'right' : 'left';
           return (
+
             <div className='message' key={i}>
-              <p className={`text ${side}`}>{info.message}</p>
-              <h3 className={`name ${side}`}>{info.name}</h3>
+              <p className={`text ${side}`}> {info.message} </p>
+              <h3 className={`name ${side}`}> {info.name} </h3>
             </div>
-          )
 
-        })}
-
-
+        )}) }
       </div>
     )
   }
