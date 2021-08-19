@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-Thank you for taking the time to review my code! ChatterDash is a simple front end chat app that consumes the API in server.js. The client uses a proxy server with create-react-app pointing to localhost:8080. Enjoy!
+ChatterDash is a simple chat app that consumes the API found in server.js. The client uses a proxy server with create-react-app pointing to localhost:8080. Enjoy!
 
 ## Installation
 
@@ -58,14 +58,6 @@ App: {
   }
 }
 ```
-
-## Tests
-
-TBD
-
-## New Features
-
-TBD
 
 ## License
 
